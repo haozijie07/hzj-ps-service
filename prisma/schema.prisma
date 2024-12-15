@@ -12,3 +12,21 @@ datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  username       String    @unique
+  password       String 
+  email          String    @unique
+  name           String 
+  isActive       Boolean   @default(true)
+  createdById    String    @db.ObjectId
+  createdByName  String    
+  createdAt      DateTime  @default(now())
+  updatedById    String?   @db.ObjectId
+  updatedByName  String?    
+  updatedAt      DateTime  @updatedAt
+  isDeleted      Boolean   @default(false)
+
+  @@map("users") // 映射到 MongoDB 中的 "users" 集合
+}

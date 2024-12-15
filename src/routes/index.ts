@@ -13,10 +13,10 @@ function useRouter(app: Express) {
       if (stat.isDirectory()) {
         // 如果是文件夹，递归调用
         loadRouters(fullPath);
-      } else if (file.endsWith(".router.ts")) {
+      } else if (file.endsWith(".routes.ts")) {
         // 如果是 router.ts 文件，加载路由
         const router = require(fullPath);
-        const routerName = path.basename(file, ".router.ts");
+        const routerName = path.basename(file, ".routes.ts");
 
         app.use(`/api/${routerName}`, router.default || router);
       }
