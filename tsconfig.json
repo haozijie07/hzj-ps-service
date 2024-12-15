@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ESNext", // 编译后的目标 JavaScript 版本
+    "module": "ESNext", // 使用的模块系统
+    "strict": true, // 启用所有严格类型检查选项
+    "esModuleInterop": true, // 允许对 CommonJS 和 ES 模块的互操作
+    "forceConsistentCasingInFileNames": true, // 文件名大小写强制一致
+    "skipLibCheck": true, // 跳过类型声明文件的检查
+    "moduleResolution": "Node", // 模块解析策略
+    "baseUrl": "./", // 相对路径的基准目录
+    "paths": {
+      "@/*": ["src/*"] // 配置路径别名
+    },
+    "outDir": "./dist", // 输出目录
+    "rootDir": "./src", // 输入文件的根目录
+    "allowJs": true, // 允许编译 JavaScript 文件
+    "resolveJsonModule": true, // 允许引入 JSON 文件
+    "isolatedModules": true // 强制每个文件都是模块
+  },
+  "include": ["src"], // 包含的文件或目录
+  "exclude": ["node_modules", "dist"] // 排除的文件或目录
+}
